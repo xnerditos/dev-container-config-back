@@ -1,0 +1,65 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+	"name": "WorkInProcess C# (.NET)",
+    
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/dotnet:0-6.0-jammy",
+    "containerEnv": {
+        "GITHUB_USER": "${localEnv:GITHUB_USER}",
+        "PACKAGE_ACCESS": "${localEnv:PACKAGE_ACCESS}"
+    },
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [5000, 5001],
+	"portsAttributes": {
+			"5001": {
+				"protocol": "https"
+			}
+	},
+
+    "extensions": [
+        "ms-vsliveshare.vsliveshare",
+        "formulahendry.dotnet-test-explorer",
+        "rafistatar.addlocalnetreferences",
+        "schneiderpat.aspnet-helper",
+        "ms-vscode.csharp",
+        "rogalmic.bash-debug",
+        "alefragnani.bookmarks",
+        "ms-dotnettools.csharp",
+        "k--kato.docomment",
+        "streetsidesoftware.code-spell-checker",
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+        "matijarmk.dotnet-core-commands",
+        "editorconfig.editorconfig",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "tintoy.msbuild-project-tools",
+        "ziyasal.vscode-open-in-github",
+        "quicktype.quicktype",
+        "christian-kohler.path-intellisense",
+        "dinhani.divider",
+        "wayou.vscode-todo-highlight",
+        "fullstackspider.visual-nuget"
+    ],
+
+    // Docker extra run args
+    // "runArgs": [
+    //     "-v",
+    //     "${env:SSH_AUTH_SOCK}:/tmp/ssh-agent.socket",
+    //     "-e",
+    //     "SSH_AUTH_SOCK=/tmp/ssh-agent.socket"
+    // ],
+        
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "wget https://raw.githubusercontent.com/xnerditos/dev_container_config_back/master/bootstrap.sh -O ~/bootstrap.sh && chmod +x ~/bootstrap.sh && ~/bootstrap.sh",
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	}
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+}
