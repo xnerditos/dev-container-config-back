@@ -6,7 +6,7 @@ This repo provides config for bringing up a dev container for backend devs
 
 To use Dev Containers
 
-1. Install Docker.  If you are using an Ubuntu based distribution of Linux, you can use the script `install-docker-ubuntu.sh`.  *Reboot after installing!*
+1. Install Docker.  If you are using an Ubuntu based distribution of Linux, you can use the script `install-docker-ubuntu.sh`.  *Reboot after installing!*  Once you have Docker installed, run a test command to verify:  `docker run hello-world`.  It should return a message that Docker is correctly installed.  For information about installing Docker on Windows or Mac (or for more information about installing it on Linux) [see this page](https://docs.docker.com/get-docker/).
 
 2. Install the extensions in Visual Studio Code for Dev Containers (Remote Containers)
 
@@ -20,7 +20,7 @@ export GITHUB_USER=mygithubuser
 export PACKAGE_ACCESS=ghp_WLXXxhb7PhfR3mhCMbHLveR6LaSR8k4961if111
 ```
 
-4. If you are using SSH to access github, then you will have to add the SSH key to the container.  You cna do this automatically by copying it to the root of the repository as `github_key`.  DO NOT check in this file (it should be ignored anyway)
+4. If you are using SSH to access github, then you will have to add the SSH key to the container.  You can do this automatically by copying it to the root of the repository as `github_key`.  DO NOT check in this file (it should be ignored anyway).  This must be done *before starting the container*.  
 
 ## Using Dev Containers for development
 
