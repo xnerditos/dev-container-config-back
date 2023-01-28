@@ -12,6 +12,8 @@ fi
 dotnet nuget add source https://nuget.pkg.github.com/xnerditos/index.json -n "xnerditos" --username $GITHUB_USER --store-password-in-clear-text --password $PACKAGE_ACCESS
 dotnet tool install --global altcover.global
 
+wget -O $HOME/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+
 #sudo apt update 
 #sudo apt upgrade -y 
 
@@ -39,6 +41,7 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
 export PATH="\$PATH:/home/vscode/.dotnet/tools"
+source \$HOME/.git-completion.bash
 EOF
 
 source $HOME/.bashrc
