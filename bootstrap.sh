@@ -13,6 +13,10 @@ dotnet nuget add source https://nuget.pkg.github.com/xnerditos/index.json -n "xn
 dotnet tool install --global altcover.global
 
 wget -O $HOME/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+mkdir -p $HOME/install
+wget -O $HOME/install/desktop-lite-debian.sh https://raw.githubusercontent.com/microsoft/vscode-dev-containers/main/script-library/desktop-lite-debian.sh
+
+chmod +x $HOME/install/*.sh
 
 #sudo apt update 
 #sudo apt upgrade -y 
