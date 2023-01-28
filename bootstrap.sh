@@ -10,6 +10,7 @@ if [[ -z "$PACKAGE_ACCESS" ]]; then
 fi
 
 dotnet nuget add source https://nuget.pkg.github.com/xnerditos/index.json -n "xnerditos" --username $GITHUB_USER --store-password-in-clear-text --password $PACKAGE_ACCESS
+dotnet tool install --global altcover.global
 
 #sudo apt update 
 #sudo apt upgrade -y 
@@ -37,6 +38,7 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l > /dev/null || ssh-add
+export PATH="\$PATH:/home/vscode/.dotnet/tools"
 EOF
 
 source $HOME/.bashrc
