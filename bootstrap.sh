@@ -44,6 +44,10 @@ export PATH="\$PATH:/home/vscode/.dotnet/tools"
 source \$HOME/.git-completion.bash
 EOF
 
+cd $HOME
+ln -s /workspaces repos
+cd - &>/dev/null
+
 source $HOME/.bashrc
 
 # wget -O ./vsls-reqs.sh https://aka.ms/vsls-linux-prereq-script
