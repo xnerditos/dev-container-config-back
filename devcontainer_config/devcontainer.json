@@ -11,7 +11,7 @@
     },
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000, 5001],
+	"forwardPorts": [5000, 5001, 6080],
 	"portsAttributes": {
 			"5001": {
 				"protocol": "https"
@@ -53,11 +53,16 @@
     // ],
         
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "wget https://raw.githubusercontent.com/xnerditos/dev_container_config_back/master/bootstrap.sh -O ~/bootstrap.sh && chmod +x ~/bootstrap.sh && ~/bootstrap.sh",
+	"postCreateCommand": "wget https://raw.githubusercontent.com/xnerditos/dev_container_config_back/master/bootstrap.sh -O ~/bootstrap.sh && chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh",
 
     // Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/desktop-lite": { 
+            "webPort": 6080,
+            "vncPort": 5091,
+            "password": "vscode"
+        }
 	}
 
 	// Configure tool-specific properties.
