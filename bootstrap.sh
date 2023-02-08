@@ -76,7 +76,10 @@ fi
 ############################################
 sudo apt update 
 sudo apt upgrade -y 
+sudo apt install xmlstarlet -y
 
+# Node install and node packages
+############################################
 curl -sL https://deb.nodesource.com/setup_18.x -o /tmp/nodesource_setup.sh
 sudo bash /tmp/nodesource_setup.sh
 sudo apt install nodejs
